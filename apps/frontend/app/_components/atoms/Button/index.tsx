@@ -2,7 +2,7 @@ import { cn } from "@/app/_utils";
 import { VariantProps, cva } from "class-variance-authority";
 import { ComponentProps } from "react";
 
-const button = cva(["text-neutral-50", "whitespace-nowrap", "rounded-md"], {
+const button = cva(["text-neutral-50", "whitespace-nowrap", "rounded-full"], {
   variants: {
     variant: {
       primary: "bg-sky-500 hover:bg-sky-600",

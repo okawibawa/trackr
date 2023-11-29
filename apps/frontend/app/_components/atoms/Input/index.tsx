@@ -1,5 +1,5 @@
 import { cn } from "@/app/_utils";
-import { VariantProps, cva } from "class-variance-authority";
+import { cva, VariantProps } from "class-variance-authority";
 import React, { ComponentProps } from "react";
 
 const input = cva(
@@ -15,19 +15,18 @@ const input = cva(
     defaultVariants: {
       size: "md",
     },
-  }
+  },
 );
 
 interface InputProperties
-  extends Omit<ComponentProps<"input">, "size">,
-    VariantProps<typeof input> {
-  type: string;
+  extends Omit<ComponentProps<"input">, "size">, VariantProps<typeof input> {
+  type?: "text" | "number" | "tel";
   placeholder?: string;
   [props: string]: any;
 }
 export const Input = ({
   size,
-  type,
+  type = "text",
   placeholder = "Placeholder text.",
   className,
   props,
